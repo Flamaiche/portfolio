@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Contact</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="projets.html">Projets</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="section">
+  <h1>Contact</h1>
+
+  <p class="paragraphe">
+    Je recherche un stage de 8 à 10 semaines, débutant le 14 avril 2025.<br>
+    Ce stage me permettra d’appliquer mes connaissances et de valider mon année scolaire.
+  </p>
+
+  <div class="grid-container">
+    
+    <div class="grid-left">
+
+      <div class="documents">
+        <h2>Mes documents</h2>
+        <a href="fichiers/CV.pdf" download class="btn">📄 Télécharger mon CV</a>
+        <a href="fichiers/lettre.pdf" download class="btn">✉ Télécharger ma lettre de motivation</a>
+      </div>
+
+      <div class="contacts">
+        <h2>Me contacter</h2>
+        <a href="mailto:hugorichard404@gmail.com" class="btn">📧 hugorichard404@gmail.com</a>
+        <a href="https://github.com/Flamaiche" target="_blank" class="btn">🐱 GitHub /Flamaiche</a>
+        <a href="https://www.linkedin.com/in/hugorichard" target="_blank" class="btn">🔗 LinkedIn /hugorichard</a>
+      </div>
+
+    </div>
+
+    <div class="grid-right">
+      <figure class="cv-container">
+        <img src="fichiers/CV.jpg" class="cv-img">
+      </figure>
+    </div>
+
+  </div>
+
+</section>
+
+<div id="cvModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="cvModalImg">
+  <div id="caption"></div>
+</div>
+
+<footer>
+  <p>2025 - <span>Mon Portfolio</span></p>
+</footer>
+
+<script>
+  const modal = document.getElementById("cvModal");
+  const img = document.querySelector(".cv-img");
+  const modalImg = document.getElementById("cvModalImg");
+  const captionText = document.getElementById("caption");
+  const closeBtn = document.querySelector(".close");
+
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+
+  closeBtn.onclick = function() { 
+    modal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    if(event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>
