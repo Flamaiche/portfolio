@@ -53,6 +53,15 @@
         });
     });
 
+    document.querySelectorAll('.card-front').forEach(function (front) {
+        var img = front.querySelector('img');
+        if (!img || img.alt === '') return;
+        var label = document.createElement('span');
+        label.className = 'card-label';
+        label.textContent = img.alt;
+        front.appendChild(label);
+    });
+
     var lb = document.getElementById('lightbox');
     var lbImg = document.getElementById('lightboxImg');
     var lbCaption = document.getElementById('lightboxCaption');
