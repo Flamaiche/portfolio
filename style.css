@@ -5,12 +5,17 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html, body {
     height: 100%;
 }
 
 body {
-    background: #010048;
+    background: radial-gradient(1200px 800px at 85% -10%, #16167a 0%, #010048 60%);
+    background-attachment: fixed;
     color: white;
     line-height: 1.6;
     font-size: 16px;
@@ -63,6 +68,10 @@ nav a {
     position: relative;
 }
 
+nav a.active {
+    color: #f1c40f;
+}
+
 nav a::after {
     content: "";
     position: absolute;
@@ -74,7 +83,8 @@ nav a::after {
     transition: width 0.3s;
 }
 
-nav a:hover::after {
+nav a:hover::after,
+nav a.active::after {
     width: 100%;
 }
 
@@ -85,9 +95,47 @@ nav a:hover::after {
 
 .paragraphe {
     text-align: justify;
-    margin-left: 50px;
-    margin-right: 500px;
+    max-width: 850px;
+    margin: 0 auto;
 }
+
+/* ----- Hero (accueil) ----- */
+
+.hero {
+    text-align: center;
+    padding: 80px 10% 60px;
+}
+
+.hero-title {
+    font-size: 2.8em;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+.hero-title span {
+    color: #f1c40f;
+}
+
+.hero-subtitle {
+    font-size: 1.15em;
+    color: #cfd3ff;
+}
+
+.hero-desc {
+    max-width: 720px;
+    margin: 18px auto;
+    color: #c3c7ea;
+}
+
+.hero-links {
+    margin: 26px 0 16px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* ----- Boutons ----- */
 
 .btn {
     display: inline-block;
@@ -106,6 +154,124 @@ nav a:hover::after {
     color: black;
     transform: scale(1.05);
 }
+
+.btn-cta {
+    background: #f1c40f;
+    color: black;
+    font-weight: 600;
+}
+
+.btn-cta:hover {
+    background: black;
+    color: #f1c40f;
+}
+
+/* ----- Compétences ----- */
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skill-cat {
+    border: 2px solid rgba(241, 196, 15, 0.35);
+    border-radius: 10px;
+    padding: 18px 20px;
+    background: rgba(241, 196, 15, 0.04);
+}
+
+.skill-cat h3 {
+    margin-bottom: 12px;
+    color: #f1c40f;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: #0a0a55;
+    border: 1px solid rgba(241, 196, 15, 0.5);
+    font-size: 0.85em;
+    color: #f5f5ff;
+}
+
+.badge-accent {
+    background: #f1c40f;
+    color: #010048;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* ----- Parcours (timeline) ----- */
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 44px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 6px;
+    bottom: 6px;
+    width: 3px;
+    border-radius: 2px;
+    background: rgba(241, 196, 15, 0.4);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 26px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -38px;
+    top: 8px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #010048;
+    border: 3px solid #f1c40f;
+    box-shadow: 0 0 0 4px rgba(241, 196, 15, 0.15);
+}
+
+.timeline-content {
+    background: rgba(241, 196, 15, 0.05);
+    border: 1px solid rgba(241, 196, 15, 0.25);
+    border-radius: 10px;
+    padding: 16px 20px;
+}
+
+.timeline-date {
+    display: inline-block;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #f1c40f;
+    margin-bottom: 6px;
+}
+
+.timeline-content p {
+    color: #d6d9f5;
+}
+
+/* ----- Cartes projets ----- */
 
 .projects {
     display: grid;
@@ -197,11 +363,15 @@ nav a:hover::after {
     margin-top: auto;
 }
 
+/* ----- Page contact ----- */
+
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
     align-items: start;
+    max-width: 1000px;
+    margin: 30px auto 0;
 }
 
 .grid-left {
@@ -231,6 +401,14 @@ nav a:hover::after {
     cursor: pointer;
 }
 
+.documents .btn,
+.contacts .btn {
+    display: block;
+    text-align: center;
+}
+
+/* ----- Footer ----- */
+
 footer {
     background: black;
     color: white;
@@ -242,6 +420,8 @@ footer {
 footer span {
     color: #f1c40f;
 }
+
+/* ----- Responsive ----- */
 
 @media (max-width: 768px) {
     header {
@@ -257,6 +437,15 @@ footer span {
     }
     .section {
         padding: 50px 5%;
+    }
+    .hero {
+        padding: 60px 5% 40px;
+    }
+    .hero-title {
+        font-size: 2em;
+    }
+    .skills {
+        grid-template-columns: 1fr;
     }
     .grid-container {
         grid-template-columns: 1fr;
@@ -288,28 +477,53 @@ footer span {
     }
 }
 
-.modal {
+/* ----- Lightbox ----- */
+
+.lightbox-modal {
     display: none;
     position: fixed;
+    inset: 0;
     z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.85);
+    background-color: rgba(0, 0, 0, 0.9);
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
-.modal-content {
-    margin: auto;
-    display: block;
-    max-width: 90%;
-    max-height: 100%;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+.lightbox-modal.show {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 92%;
+    max-height: 85%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     animation: zoomIn 0.3s;
+}
+
+.lightbox-caption {
+    color: #fff;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 0.95em;
+    padding: 0 20px;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 2.6em;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 2100;
+    transition: color 0.3s;
+}
+
+.lightbox-close:hover {
+    color: #f1c40f;
 }
 
 @keyframes zoomIn {
@@ -317,28 +531,12 @@ footer span {
     to {transform: scale(1);}
 }
 
-.close {
-    position: fixed;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 2.5em;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 2100;
-    transition: color 0.3s;
-}
-
-.close:hover {
-    color: #f1c40f;
-}
-
 @media (max-width: 768px) {
-    .modal-content {
+    .lightbox-content {
         max-width: 95%;
         max-height: 80%;
     }
-    .close {
+    .lightbox-close {
         font-size: 2em;
         top: 10px;
         right: 15px;
@@ -346,16 +544,69 @@ footer span {
 }
 
 @media (max-width: 480px) {
-    .modal-content {
+    .lightbox-content {
         max-width: 100%;
         max-height: 70%;
     }
-    .close {
+    .lightbox-close {
         font-size: 1.8em;
         top: 10px;
         right: 10px;
     }
 }
+
+/* ----- Animations & retour en haut ----- */
+
+.js .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js .reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .js .reveal {
+        transition: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #f1c40f;
+    color: #010048;
+    border: none;
+    font-size: 1.4em;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s;
+    z-index: 1500;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+
+.back-to-top:hover {
+    background: #ffffff;
+}
+
+/* ----- Filtres langages ----- */
 
 .language-filters {
     margin: 15px 0 40px 0;

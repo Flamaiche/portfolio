@@ -2,7 +2,9 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Portfolio - Accueil</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hugo Richard — Portfolio</title>
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -10,54 +12,149 @@
 
 <header>
     <nav>
-        <a href="index.html">Accueil</a>
+        <a href="index.html" class="active">Accueil</a>
         <a href="projets.html">Projets</a>
         <a href="contact.html">Contact</a>
     </nav>
 </header>
 
-<section class="section">
-<h1>Bonjour, </h1>
+<section class="hero reveal">
+    <h1 class="hero-title">Hugo <span>Richard</span></h1>
+    <p class="hero-subtitle">Étudiant en BUT Informatique · 3<sup>e</sup> année · IUT de Lens</p>
+    <p class="hero-desc">
+        Passionné par le développement web et les jeux vidéo, je conçois des applications
+        web (PHP, Vue.js), des jeux (Java, JavaFX, OpenGL) et je manipule des bases de
+        données SQL (PostgreSQL, MySQL).
+    </p>
+    <div class="hero-links">
+        <a href="https://github.com/Flamaiche" target="_blank" class="btn">GitHub</a>
+        <a href="https://www.linkedin.com/in/hugo-richard-9741b9386/" target="_blank" class="btn">LinkedIn</a>
+        <a href="mailto:hugorichard404@gmail.com" class="btn">Me contacter</a>
+    </div>
+    <a href="projets.html" class="btn btn-cta">Voir mes projets</a>
+</section>
+
+<section class="section reveal">
+<h1>À propos de moi</h1>
 
 <p class="paragraphe">
-Je suis actuellement en deuxième année de BUT Informatique à l’IUT de Lens.
-J’ai acquis une solide base en front-end (HTML, CSS, PHP), en back-end (Java, Python)
-et en bases de données SQL (PostgreSQL, MySQL).
+Je suis actuellement en troisième année de BUT Informatique à l’IUT de Lens.
+J’ai acquis une solide base en développement web (HTML, CSS, JavaScript, PHP, Vue.js),
+en programmation (Java, Python) et en bases de données SQL (PostgreSQL, MySQL).
 <br><br>
 J’ai également eu l’occasion de diriger des travaux de groupe,
 ce qui m’a permis de développer mes compétences en travail d’équipe,
 communication et autonomie.
 </p>
-<br>
-
-<a href="projets.html" class="btn">Voir tous mes projets</a>
 </section>
 
-<section class="section">
+<section class="section reveal">
+<h1>Parcours</h1>
+
+<div class="timeline">
+
+    <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3>BUT Informatique — IUT de Lens</h3>
+            <span class="timeline-date">2024 — aujourd’hui</span>
+            <p>Troisième année en cours. Compétences en développement web, programmation et bases de données.</p>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3>Stage développeur web — OpenItech</h3>
+            <span class="timeline-date">2026 · 8 semaines</span>
+            <p>Projet Avosdim Calculateur : création d’un site en PHP Laravel avec récupération et envoi vers une API, et visualisation des données.</p>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3>Baccalauréat Général</h3>
+            <span class="timeline-date">2021 — 2024</span>
+            <p>Mention Bien — Douai.</p>
+        </div>
+    </div>
+
+</div>
+</section>
+
+<section class="section reveal">
+<h1>Compétences</h1>
+
+<div class="skills">
+
+    <div class="skill-cat">
+        <h3>Développement web</h3>
+        <div class="badges">
+            <span class="badge">HTML</span>
+            <span class="badge">CSS</span>
+            <span class="badge">JavaScript</span>
+            <span class="badge">Vue.js</span>
+            <span class="badge">PHP</span>
+        </div>
+    </div>
+
+    <div class="skill-cat">
+        <h3>Programmation &amp; jeux</h3>
+        <div class="badges">
+            <span class="badge">Java</span>
+            <span class="badge">JavaFX</span>
+            <span class="badge">OpenGL</span>
+            <span class="badge">Python</span>
+        </div>
+    </div>
+
+    <div class="skill-cat">
+        <h3>Bases de données</h3>
+        <div class="badges">
+            <span class="badge">PostgreSQL</span>
+            <span class="badge">MySQL</span>
+        </div>
+    </div>
+
+    <div class="skill-cat">
+        <h3>Outils &amp; soft skills</h3>
+        <div class="badges">
+            <span class="badge">Git</span>
+            <span class="badge">GitHub</span>
+            <span class="badge">Travail d’équipe</span>
+            <span class="badge">Autonomie</span>
+        </div>
+    </div>
+
+</div>
+</section>
+
+<section class="section reveal">
 <h1>Projets sélectionnés</h1>
 
 <div class="projects">
 
-<!-- Projet 1 -->
-<div class="card">
+<!-- Projet : Code Marathon -->
+<div class="card reveal">
   <div class="card-inner">
     <div class="card-front">
-      <img src="images/code-marathon.jpg" alt="Code Marathon Music Orientale">
+      <img src="images/code-marathon.jpg" alt="Code Marathon Music Orientale" loading="lazy" class="js-lightbox">
     </div>
     <div class="card-back">
       <h3>Code Marathon Music Orientale</h3>
-      <p>Projet musical / coding challenge. Création d’une expérience interactive orientale.</p>
+      <p>Défi de codage musical mené en collaboration avec les étudiants MMI pour créer une expérience interactive orientale.</p>
       <p class="progLang">PHP</p>
       <a href="https://github.com/Flamaiche/code-marathon-music-orientale" target="_blank" class="btn">Voir sur GitHub</a>
     </div>
   </div>
 </div>
 
-<!-- Projet 5 -->
-<div class="card">
+<!-- Projet : SpaceShooter -->
+<div class="card reveal">
   <div class="card-inner">
     <div class="card-front">
-      <img src="images/spaceshooter.jpg" alt="SpaceShooter">
+      <img src="images/spaceshooter.jpg" alt="SpaceShooter" loading="lazy" class="js-lightbox">
     </div>
     <div class="card-back">
       <h3>SpaceShooter</h3>
@@ -68,12 +165,35 @@ communication et autonomie.
   </div>
 </div>
 
+<!-- Projet : Lensymphony Web -->
+<div class="card reveal">
+  <div class="card-inner">
+    <div class="card-front">
+      <img src="images/lensymphony_web.jpg" alt="Lensymphony Web" loading="lazy" class="js-lightbox">
+    </div>
+    <div class="card-back">
+      <h3>Lensymphony Web</h3>
+      <p>Version web de Lensymphony (Vue.js + PHP) pour écouter et gérer ses playlists en ligne.</p>
+      <p class="progLang">VUE</p>
+      <a href="https://github.com/Flamaiche/lensymphony_web" target="_blank" class="btn">Voir sur GitHub</a>
+    </div>
+  </div>
+</div>
+
 </div>
 </section>
 
+<div id="lightbox" class="lightbox-modal">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-content" id="lightboxImg" alt="">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
 <footer>
-<p>2025 - <span>Mon Portfolio</span></p>
+<p><span id="year"></span> - <span>Mon Portfolio</span></p>
 </footer>
+
+<script src="js/main.js"></script>
 
 </body>
 </html>
