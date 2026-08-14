@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="550" height="350" viewBox="0 0 550 350">
-  <rect width="550" height="350" fill="#010048"/>
-  <circle cx="275" cy="150" r="70" fill="#f1c40f" opacity="0.15"/>
-  <text x="275" y="165" font-family="Poppins, Arial, sans-serif" font-size="34" font-weight="700" fill="#f1c40f" text-anchor="middle">MotusJava</text>
-  <text x="275" y="215" font-family="Poppins, Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">M A N G E</text>
-  <text x="275" y="250" font-family="Poppins, Arial, sans-serif" font-size="12" fill="#aaaaaa" text-anchor="middle">Jeu de devinette de mots en Java (BUT1)</text>
-</svg>
