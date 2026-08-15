@@ -54,12 +54,6 @@ header {
     z-index: 1000;
 }
 
-header h2 {
-    color: #f1c40f;
-    font-size: 1.5em;
-    font-weight: 700;
-}
-
 nav a {
     margin-left: 20px;
     text-decoration: none;
@@ -203,14 +197,6 @@ nav a.active::after {
     color: #f5f5ff;
 }
 
-.badge-accent {
-    background: #f1c40f;
-    color: #010048;
-    font-weight: 600;
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
 /* ----- Parcours (timeline) ----- */
 
 .timeline {
@@ -301,10 +287,15 @@ nav a.active::after {
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.4);
     transition: transform 0.3s, opacity 0.3s;
+    cursor: pointer;
 }
 
 .card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-8px);
+}
+
+.card.flipped {
+    box-shadow: 0 15px 30px rgba(241, 196, 15, 0.4);
 }
 
 .card-inner {
@@ -315,9 +306,8 @@ nav a.active::after {
     transform-style: preserve-3d;
 }
 
-.card:hover .card-inner {
-    transform: translateY(-8px) scale(1.02) rotateY(180deg);
-    box-shadow: 0 15px 30px rgba(241, 196, 15, 0.4);
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
 }
 
 .card-front,
@@ -354,6 +344,30 @@ nav a.active::after {
     color: #fff;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
     pointer-events: none;
+}
+
+.card-zoom {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.card-zoom:hover {
+    background: #f1c40f;
+    color: #010048;
+    transform: scale(1.1);
 }
 
 .card-back {
@@ -475,9 +489,6 @@ footer span {
 }
 
 @media (max-width: 480px) {
-    header h2 {
-        font-size: 1.2em;
-    }
     .btn {
         padding: 10px 20px;
         font-size: 0.9em;
@@ -652,7 +663,5 @@ footer span {
 }
 
 .card.hidden {
-    display: none !important;
-    opacity: 0;
-    transform: scale(0.95);
+    display: none;
 }
