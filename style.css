@@ -265,38 +265,15 @@ nav a.active::after {
     gap: 25px;
 }
 
-.projects--featured {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.projects--featured .card {
-    max-width: 620px;
-}
-
-.projects--featured .card:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    justify-self: center;
-}
-
 @media (max-width: 1024px) {
     .projects {
         grid-template-columns: repeat(2, 1fr);
-    }
-    .projects--featured {
-        max-width: 700px;
     }
 }
 
 @media (max-width: 768px) {
     .projects {
         grid-template-columns: 1fr;
-    }
-    .projects--featured {
-        grid-template-columns: 1fr;
-        max-width: 550px;
     }
 }
 
