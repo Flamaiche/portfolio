@@ -56,6 +56,7 @@
         if (lb) lb.classList.remove('show');
     }
 
+    var insertions = [];
     document.querySelectorAll('.card-front').forEach(function (front) {
         var img = front.querySelector('img');
         if (!img || img.alt === '') return;
@@ -63,7 +64,6 @@
         var label = document.createElement('span');
         label.className = 'card-label';
         label.textContent = img.alt;
-        front.appendChild(label);
 
         var zoom = document.createElement('button');
         zoom.className = 'card-zoom';
@@ -72,7 +72,14 @@
         zoom.setAttribute('data-src', img.currentSrc || img.src);
         zoom.setAttribute('data-alt', img.alt || '');
         zoom.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>';
-        front.appendChild(zoom);
+
+        insertions.push({ front: front, label: label, zoom: zoom });
+    });
+    insertions.forEach(function (item) {
+        item.front.style.visibility = 'hidden';
+        item.front.appendChild(item.label);
+        item.front.appendChild(item.zoom);
+        item.front.style.visibility = '';
     });
 
     document.addEventListener('click', function (e) {
