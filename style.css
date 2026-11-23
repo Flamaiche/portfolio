@@ -35,6 +35,10 @@ h2 {
     margin: 20px 0;
 }
 
+.section > h2 {
+    font-size: 2em;
+}
+
 h3 {
     font-size: 1.2em;
     font-weight: 600;
@@ -453,10 +457,11 @@ footer {
     padding-bottom: 24px;
 }
 
-.footer-inner h3 {
+.footer-inner h2 {
     color: #f1c40f;
     margin-bottom: 12px;
     font-size: 1.1em;
+    font-weight: 600;
 }
 
 .footer-brand p {
