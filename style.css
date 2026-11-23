@@ -731,3 +731,50 @@ footer {
 .card.hidden {
     display: none;
 }
+
+@media print {
+    body {
+        background: #fff;
+        color: #000;
+    }
+
+    .back-to-top,
+    .lightbox-modal,
+    .language-filters,
+    .card-zoom,
+    .card-label {
+        display: none !important;
+    }
+
+    .js .reveal,
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .card {
+        position: static;
+        aspect-ratio: auto;
+        border: 1px solid #ccc;
+        break-inside: avoid;
+    }
+
+    .card-inner,
+    .card-front {
+        position: static;
+        transform: none;
+    }
+
+    .card-back {
+        display: none;
+    }
+
+    .card-front img {
+        height: auto;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
